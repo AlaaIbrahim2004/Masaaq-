@@ -19,7 +19,9 @@ namespace DataAccessLayer.Data.Configration_classes
             builder.Property(l => l.AcademicYear).HasColumnType("nvarchar(100)");
             base.Configure(builder);
 
-            builder.HasMany(p=>p.Courses).WithOne(p => p.Level).HasForeignKey(p=>p.LevelFK).IsRequired();
+            builder.HasMany(p=>p.Courses).WithOne(p => p.Level).HasForeignKey(p=>p.LevelFK).OnDelete(DeleteBehavior.SetNull);
+
+            builder.HasMany(l => l.Students).WithOne(s => s.level).HasForeignKey( s => s.levelFK).OnDelete(DeleteBehavior.SetNull);
         }
     }
 }

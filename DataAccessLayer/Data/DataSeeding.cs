@@ -7,6 +7,7 @@ using DataAccessLayer.Models.Contents.Lessons;
 using DataAccessLayer.Models.Contents.Questions;
 using DataAccessLayer.Models.IdentityModels;
 using DataAccessLayer.Models.Levels;
+using DataAccessLayer.Models.Students;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -59,6 +60,48 @@ namespace DataAccessLayer.Data
                     }
                 };
                 await _context.Levels.AddRangeAsync(levels);
+                await _context.SaveChangesAsync();
+            }
+
+
+
+
+            if (!_rolemanager.Roles.Any())
+            {
+                var role1 = new IdentityRole("Student");             
+                var role2 = new IdentityRole("Admin");             
+                await _rolemanager.CreateAsync(role1);
+                await _rolemanager.CreateAsync(role2);
+
+            }
+
+
+            if(await _usermanager.Users.FirstOrDefaultAsync(u=>u.Email == "Ahmed59Admin@gmail.com") is null)
+            {
+                var user = new ApplicationUser()
+                {
+                    UserName = "01015480281",
+                    Email = "Ahmed59Admin@gmail.com",
+                    PhoneNumber = "01015480281",
+                    FullName = "Ahmed Ashraf"
+                };
+
+                var res = await _usermanager.CreateAsync(user, "Aa2005");
+                await _usermanager.AddToRoleAsync(user, "Admin");
+
+
+                var student = new Student()
+                {
+                    FullName = "Ahmed Ashraf",
+                    PhoneNumber = "01015480281",
+                    ParentPhoneNumber = "01015480282",
+                    levelFK =1,
+                    Government = "Cairo",
+                    UserId = user.Id,
+                    email = "Ahmed59Admin@gmail.com"
+                };
+
+                await _context.Students.AddAsync(student);
                 await _context.SaveChangesAsync();
             }
 

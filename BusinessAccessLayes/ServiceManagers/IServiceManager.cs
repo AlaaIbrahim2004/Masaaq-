@@ -14,6 +14,7 @@ namespace BusinessAccessLayes.ServiceManagers
         public IExamService ExamService { get; }
 
         public IEnrollmentService EnrollmentService { get; }
+        public ILevelService LevelService { get; }
 
     }
 }

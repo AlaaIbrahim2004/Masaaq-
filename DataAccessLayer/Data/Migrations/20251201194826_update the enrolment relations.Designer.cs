@@ -4,6 +4,7 @@ using DataAccessLayer.Data.Contexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataAccessLayer.Data.Migrations
 {
     [DbContext(typeof(MasaqDbContext))]
-    partial class MasaqDbContextModelSnapshot : ModelSnapshot
+    [Migration("20251201194826_update the enrolment relations")]
+    partial class updatetheenrolmentrelations
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -207,7 +210,7 @@ namespace DataAccessLayer.Data.Migrations
                         .HasColumnType("datetime2")
                         .HasComputedColumnSql("GETDATE()");
 
-                    b.Property<int?>("LevelFK")
+                    b.Property<int>("LevelFK")
                         .HasColumnType("int");
 
                     b.Property<string>("Title")
@@ -512,9 +515,6 @@ namespace DataAccessLayer.Data.Migrations
                         .HasColumnType("datetime2")
                         .HasDefaultValueSql("GETDATE()");
 
-                    b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
@@ -531,9 +531,6 @@ namespace DataAccessLayer.Data.Migrations
 
                     b.Property<int>("NumberOfStudents")
                         .HasColumnType("int");
-
-                    b.Property<string>("PicUrl")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("name")
                         .HasColumnType("nvarchar(max)");
@@ -854,7 +851,7 @@ namespace DataAccessLayer.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<int?>("levelFK")
+                    b.Property<int>("levelFK")
                         .HasColumnType("int");
 
                     b.HasIndex("UserId")
@@ -927,7 +924,8 @@ namespace DataAccessLayer.Data.Migrations
                     b.HasOne("DataAccessLayer.Models.Levels.Level", "Level")
                         .WithMany("Courses")
                         .HasForeignKey("LevelFK")
-                        .OnDelete(DeleteBehavior.SetNull);
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
 
                     b.Navigation("Level");
                 });
@@ -1123,7 +1121,8 @@ namespace DataAccessLayer.Data.Migrations
                     b.HasOne("DataAccessLayer.Models.Levels.Level", "level")
                         .WithMany("Students")
                         .HasForeignKey("levelFK")
-                        .OnDelete(DeleteBehavior.SetNull);
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
 
                     b.Navigation("User");
 

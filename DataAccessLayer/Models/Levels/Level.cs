@@ -6,11 +6,16 @@ namespace DataAccessLayer.Models.Levels
 {
     public class Level : BaseOfAllContentEntities<int>
     {
+        public int Id { get; set; }
 
         public int LevelNumber { get; set; }
         public int NumberOfStudents { get; set; }
         public string AcademicYear { get; set; }
         public string? name { get; set; }
+
+        public string? PicUrl { get; set; }
+
+        public string? Description { get; set; }
 
         #region One to many relationship between level and course
 

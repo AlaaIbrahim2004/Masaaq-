@@ -1,4 +1,5 @@
-﻿using DataAccessLayer.Models.Contents.Exams;
+﻿using DataAccessLayer.Models.code;
+using DataAccessLayer.Models.Contents.Exams;
 using DataAccessLayer.Models.Contents.Lessons;
 using DataAccessLayer.Models.Levels;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -27,7 +28,7 @@ namespace DataAccessLayer.Models.Contents.Courses
 
 
         public Level Level { get; set; }
-        public int LevelFK { get; set; }
+        public int? LevelFK { get; set; }
 
 
 
@@ -45,6 +46,10 @@ namespace DataAccessLayer.Models.Contents.Courses
 
         #region  one to many relationship between course(one) and exams(many)
         public ICollection<Exam> exams { get; set; } = new HashSet<Exam>();
+
+
+        public ICollection<Enrollment> Enrollments { get; set; }
+
         #endregion
     }
 }

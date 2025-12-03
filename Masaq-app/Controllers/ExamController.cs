@@ -15,7 +15,12 @@ namespace Masaq_app.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<ExamDto>>> GetAllExams()
         {
-            var exams = await _iserviceManager.ExamService.GetAllAsync();
+            var studentIdClaim = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (!int.TryParse(studentIdClaim, out var stuId))
+                return NotFound();
+
+
+            var exams = await _iserviceManager.ExamService.GetAllAsync(stuId);
             return Ok(exams);
         }
 

@@ -51,10 +51,14 @@ namespace BusinessAccessLayes.Services.Classes
 
 
 
-        public async Task<IEnumerable<ExamDto>> GetAllAsync()
+        public async Task<IEnumerable<ExamDto>> GetAllAsync(int stuId)
         {
-            var repo = unitOfWork.GetRepository<Exam, int>();
-            var exams = await repo.GetAllAsync();
+            var exams = context.Enrollments
+    .Where(e => e.StudentId == stuId)
+    .SelectMany(e => e.Course.exams)
+    .ToList();
+            //var repo = unitOfWork.GetRepository<Exam, int>();
+            //var exams = await repo.GetAllAsync();
             return mapper.Map<IEnumerable<ExamDto>>(exams);
         }
 

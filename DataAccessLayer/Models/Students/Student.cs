@@ -1,4 +1,5 @@
-﻿using DataAccessLayer.Models.Contents.Comments;
+﻿using DataAccessLayer.Models.code;
+using DataAccessLayer.Models.Contents.Comments;
 using DataAccessLayer.Models.IdentityModels;
 using DataAccessLayer.Models.Levels;
 using System;
@@ -29,7 +30,7 @@ namespace DataAccessLayer.Models.Students
 
 
         [ForeignKey(nameof(level))]
-        public int levelFK { get; set; }
+        public int? levelFK { get; set; }
         [InverseProperty(nameof(Level.Students))]
         public Level level { get; set; }
 
@@ -46,5 +47,8 @@ namespace DataAccessLayer.Models.Students
         [ForeignKey(nameof(User))]
         public string UserId { get; set; }
         public ApplicationUser User { get; set; }
+
+        public ICollection<Enrollment> Enrollments { get; set; }
+
     }
 }

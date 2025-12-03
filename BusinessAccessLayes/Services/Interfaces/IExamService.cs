@@ -9,7 +9,7 @@ namespace BusinessAccessLayes.Services.Interfaces
 {
     public interface IExamService
     {
-        public Task<IEnumerable<ExamDto>> GetAllAsync();
+        public Task<IEnumerable<ExamDto>> GetAllAsync(int stuId);
 
         public Task<ExamDetailsDto?> GetByIdAsync(int studentId , int id);
 
