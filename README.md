@@ -8,7 +8,7 @@ This repository contains the Backend RESTful API for **Masaaq**, a comprehensive
 
 ## 🚀 Live Links
 * **Live Application (Frontend):** [Masaaq Netlify App](https://masaaq.netlify.app/)
-* **API Documentation:** [Swagger UI (RunASP)](https://masaq01.runasp.net/swagger/index.html)
+* **API Documentation:** [Swagger UI (ASP.NET Monster)](https://masaq01.runasp.net/swagger/index.html)
 
 *(Note: The frontend client is hosted in a separate repository. This repo contains purely the Backend API architecture).*
 
