@@ -12,7 +12,7 @@ This repository contains the Backend RESTful API for **Masaaq**, a comprehensive
 * **Framework:** ASP.NET Core Web API
 * **Database:** SQL Server & Entity Framework Core (Code-First Approach)
 * **Authentication:** ASP.NET Core Identity & JWT (JSON Web Tokens)
-* **Deployment:** RunASP (Backend) & Netlify (Frontend)
+* **Deployment:** ASP.NET Monster (Backend) & Netlify (Frontend)
 * **Documentation:** Swagger / OpenAPI
 
 ## 🔑 Key Features
