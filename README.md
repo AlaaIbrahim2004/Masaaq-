@@ -1,3 +1,8 @@
+## 📸 Screenshots
+<p align="center">
+  <img src="screenshots/f.png" alt="Masaaq Swagger UI" width="600">
+</p>
+
 # Masaaq (مساق) - E-Learning Platform API 🎓
 
 This repository contains the Backend RESTful API for **Masaaq**, a comprehensive educational platform that connects students, instructors, and administrators. 
@@ -21,10 +26,3 @@ This repository contains the Backend RESTful API for **Masaaq**, a comprehensive
 * **Assessment System:** Complete quiz creation and submission evaluation workflow.
 * **Admin Dashboard Integration:** Secure endpoints serving the administrative interface for platform management.
 
-## 📸 Screenshots
-<p align="center">
-  <img src="screenshots/f.png" alt="Masaaq Swagger UI" width="600">
-</p>
-<p align="center">
-  <img src="screenshots/b.png" alt="Masaaq Swagger UI" width="600">
-</p>
