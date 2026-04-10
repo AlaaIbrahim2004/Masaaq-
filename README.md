@@ -22,4 +22,9 @@ This repository contains the Backend RESTful API for **Masaaq**, a comprehensive
 * **Admin Dashboard Integration:** Secure endpoints serving the administrative interface for platform management.
 
 ## 📸 Screenshots
-*(ضيفي هنا صور الـ Swagger وصورة أو اتنين من الفرونت إند والداش بورد عشان يبينوا إن الـ API مربوط بـ UI حقيقي)*
+<p align="center">
+  <img src="screenshots/f.png" alt="Masaaq Swagger UI" width="600">
+</p>
+<p align="center">
+  <img src="screenshots/b.png" alt="Masaaq Swagger UI" width="600">
+</p>
