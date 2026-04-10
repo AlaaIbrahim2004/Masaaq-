@@ -4,7 +4,22 @@
 
 # Masaaq (مساق) - E-Learning Platform API 🎓
 
+> **🏆 DEPI Round 3 Capstone Project**
+> *This project was successfully developed and delivered as the graduation project for the Digital Egypt Pioneers Initiative (DEPI) scholarship.*
+
 This repository contains the Backend RESTful API for **Masaaq**, a comprehensive educational platform that connects students, instructors, and administrators. 
+
+## 👥 Team & My Role
+This project was built collaboratively by a cross-functional team of **5 developers**. 
+
+**My Role (Backend .NET Developer):**
+* **System Design & Architecture:** Participated in brainstorming core business logic, defining database relationships, and mapping the ERD into domain class diagrams.
+* **Authentication & Authorization:** Engineered the `Authentication`, `User`, and `Role` management endpoints utilizing ASP.NET Core Identity and secure **JWT**.
+* **Database Management:** Managed database schema using **Entity Framework Core** and implemented comprehensive **Data Seeding** to initialize the system environment.
+* **Deployment & Hosting:** Successfully deployed the SQL Server database and hosted the entire RESTful API on **ASP.NET Monster (RunASP)**.
+* **Collaboration:** Worked closely with front-end developers for API integration and used **Git/GitHub** for version control and team collaboration.
+
+*(My specific technical contributions and codebase changes are fully documented in the repository's commit history).*
 
 ## 🚀 Live Links
 * **Live Application (Frontend):** [Masaaq Netlify App](https://masaaq.netlify.app/)
