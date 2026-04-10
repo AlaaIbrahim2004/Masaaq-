@@ -1,6 +1,5 @@
-## 📸 Screenshots
 <p align="center">
-  <img src="screenshots/f.png" alt="Masaaq Swagger UI" width="600">
+  <img src="screenshots/f.png" alt="Masaaq Swagger UI" width="800">
 </p>
 
 # Masaaq (مساق) - E-Learning Platform API 🎓
